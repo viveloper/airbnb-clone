@@ -1,5 +1,10 @@
 import React from 'react';
+import Topbar from '../../components/Topbar';
 
 export default function Home() {
-  return <div className="text-blue-500">Home</div>;
+  return (
+    <div>
+      <Topbar />
+    </div>
+  );
 }
