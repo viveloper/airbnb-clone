@@ -1,27 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import Container from './Container';
-import Logo from './Logo';
 
 function Topbar() {
   return (
-    <header>
-      <Container className="flex">
-        <div className="flex-1">
-          <Link to="/">
-            <div className="text-rose-500">
-              <Logo
-                width="102"
-                height="32"
-                fill="currentcolor"
-                style={{ display: 'block' }}
-              />
-            </div>
-          </Link>
+    <header className="sticky">
+      <Container>
+        <div className="p-8">
+          <button className="flex items-center justify-center bg-gray-100 w-full h-12 rounded-full">
+            <span className="text-red-500 text-xl mr-2">
+              <Icon icon="bx:bx-search" />
+            </span>
+            <span className="font-semibold text-sm">어디로 여행가세요?</span>
+          </button>
         </div>
-        <div className="flex-1"></div>
-        <div className="flex-1">User Area</div>
       </Container>
     </header>
   );
