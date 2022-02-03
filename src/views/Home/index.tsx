@@ -1,10 +1,12 @@
 import React from 'react';
+import Container from '../../components/Container';
 import Topbar from '../../components/Topbar';
 
 export default function Home() {
   return (
-    <div>
+    <Container>
       <Topbar />
-    </div>
+      <div className="h-screen"></div>
+    </Container>
   );
 }

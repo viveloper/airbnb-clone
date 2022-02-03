@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import React from 'react';
 
 interface Props {
@@ -6,7 +7,13 @@ interface Props {
 }
 
 function Container({ className, children }: Props) {
-  return <div className={className}>{children}</div>;
+  return (
+    <div
+      className={clsx('min-w-[1128px] max-w-[1440px] px-20 mx-auto', className)}
+    >
+      {children}
+    </div>
+  );
 }
 
 export default Container;
