@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import Logo from './Logo';
 import Container from './Container';
+import useScroll from '../hooks/useScroll';
+import clsx from 'clsx';
 
 function Topbar() {
+  const [mode, setMode] = useState<'basic' | 'expend'>('expend');
+
+  const { scrollY } = useScroll();
+
+  useEffect(() => {
+    setMode(scrollY >= 0 && scrollY < 10 ? 'expend' : 'basic');
+  }, [scrollY]);
+
   return (
-    <header className="h-20 sticky top-0 bg-white z-50">
+    <header
+      className={clsx(
+        'h-20 sticky top-0 z-50',
+        mode === 'basic' ? 'bg-white' : 'bg-black'
+      )}
+    >
       <Container className="flex items-center h-full">
         <div className="flex-1">
           <Link to="/">
